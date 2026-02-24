@@ -374,6 +374,7 @@ location: https://github.com/tc39/proposal-amount/
         </emu-alg>
         <emu-note>
           <p>Implementations should provide conversion data consistent with the Unicode Common Locale Data Repository (CLDR) <code>units.xml</code> supplemental data. The formula for converting a value in _unit_ to its base unit is: <i>baseValue</i> = <i>value</i> × [[Factor]] + [[Offset]].</p>
+          <p>CLDR expresses conversion factors as rational numbers (e.g., 0.3048/12 for inch-to-meter). These rational values are converted to Numbers before use, so conversion arithmetic is subject to the precision of IEEE 754 binary64. For example, converting 1.75 feet to inches yields 1.75 × 0.3048 / (0.3048 / 12) = 20.999999999999996, not exactly 21.</p>
         </emu-note>
       </emu-clause>
 
